@@ -34,5 +34,19 @@ int main(int argc, char *argv[])
 
 enum outcome play (enum tool p1, enum tool p2)
 {
-    return 0;
+  if (p1 == ROCK)
+  {
+    switch (p2) 
+    {
+      case LIZARD:
+      case SCISSORS:
+        return P1_WON;
+      case SPOCK:
+      case PAPER:
+        return P2_WON;
+      default:
+        return DRAW;
+    }
+  }
+  return 0;
 }
